@@ -10,19 +10,21 @@
     />
     <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
     <link rel="stylesheet" href="style/style.css" />
-    <!-- <style>
-      /* 隐藏音频播放器 */
+    <style>
       audio {
-          display: none;
-      }
-  </style> -->
+      z-index: 9999; /* 确保音频控件在最上层 */
+      position: relative; /* 设置为相对定位 */
+    }
+    </style>
   </head>
 
   <body>
-    <audio controls autoplay>
-      <source src="Perfect.mp3" type="audio/mpeg">
-      您的浏览器不支持HTML5音频播放器，请升级您的浏览器。
-  </audio>
+    <div style="text-align: center;">
+      <audio controls autoplay>
+        <source src="Perfect.mp3" type="audio/mpeg">
+        您的浏览器不支持HTML5音频播放器，请升级您的浏览器。
+      </audio>
+    </div>
     <div class="container">
       <div class="one">
         <h1 class="one">
