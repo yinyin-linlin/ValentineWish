@@ -19,10 +19,19 @@
   </head>
 
   <body>
-    <audio controls autoplay>
-      <source src="Perfect.mp3" type="audio/mpeg">
-      您的浏览器不支持HTML5音频播放器，请升级您的浏览器。
-  </audio>
+    <audio id="bgm" src="Perfect.mp3" loop></audio>
+
+    <script>
+        // 监听整个页面的点击事件
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bgm');
+            audio.play().catch(error => {
+                console.error('播放失败:', error);
+            });
+            // 取消事件监听，避免重复触发
+            document.removeEventListener('click', arguments.callee);
+        });
+    </script>
     <div class="container">
       <div class="one">
         <h1 class="one">
